@@ -4,100 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      * {
-        font-family: "Arial";
-      }
-
-      body {
-        max-width: 768px;
-        margin: auto;
-      }
-
-      #add-form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      #todos-wrapper {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .todos-item {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .todos-item div {
-        flex: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
     <title>Formulario JSON</title>
   </head>
   <body>
-    <form id="add-form" action="">
-      <div class="form-group">
-        <label>To do</label>
-        <input id="todo" type="text" />
-      </div>
-      <div class="form-group">
-        <label>Priority</label>
-        <input id="priority" type="number" min="1" max="5" value="1" />
-      </div>
-      <button type="submit">Add todo</button>
-    </form>
+    <nav>
+      <a href="#">Form2JSON</a>
+      <a href="#">TODOs</a>
+    </nav>
+    <section id="form2json">
+      <form action="" id="2json">
+        <div class="form-group">
+          <label>First name</label>
+          <input id="firstname" type="text" />
+          <label>Last name</label>
+          <input id="lastname" type="text" />
+        </div>
+        <button type="submit">Create JSON</button>
+      </form>
+      <textarea name="" id="json-content" rows="3"></textarea>
+    </section>
+    <section id="todos">
+      <form id="add-form" action="">
+        <div class="form-group">
+          <label>To do</label>
+          <input id="todo" type="text" />
+        </div>
+        <div class="form-group">
+          <label>Priority</label>
+          <input id="priority" type="number" min="1" max="5" value="1" />
+        </div>
+        <button type="submit">Add todo</button>
+      </form>
+      <div id="todos-wrapper"></div>
+    </section>
 
-    <div id="todos-wrapper"></div>
-
-    <script>
-      const TODOS = JSON.parse(localStorage.getItem("todos")) || [];
-      const $todosWrapper = document.querySelector("#todos-wrapper");
-
-      const updateTODOS = () => {
-        localStorage.setItem("todos", JSON.stringify(TODOS));
-
-        $todosWrapper.innerHTML = TODOS.map(
-          ({ todo, priority }, index) =>
-            `<div class='todos-item' >
-              <div>
-                <h2>${todo}</h2>
-                <p>Prioridad: ${priority}<p>
-              </div>
-              <button class='remove-todo' aria-index=${index}>Delete</button>
-             </div>`
-        ).join("");
-      };
-
-      $todosWrapper.addEventListener("click", (e) => {
-        if (e.target.className === "remove-todo") {
-          let index = e.target.getAttribute("aria-index");
-          TODOS.splice(Number(index), 1);
-          updateTODOS();
-        }
-      });
-
-      const $addForm = document.querySelector("#add-form");
-      $addForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const todo = $addForm.querySelector("#todo").value;
-        const priority = $addForm.querySelector("#priority").value;
-
-        if (todo && priority) {
-          TODOS.push({ todo, priority });
-          updateTODOS();
-          e.target.reset();
-        }
-      });
-
-      updateTODOS();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

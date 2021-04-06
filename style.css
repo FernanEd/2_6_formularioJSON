@@ -1,0 +1,97 @@
+* {
+  font-family: "Arial";
+}
+
+body {
+  max-width: 768px;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+#add-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+#todos-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todos-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos-item div {
+  flex: 1;
+}
+
+input {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+input:focus {
+  border: 1px solid #28c;
+}
+
+button {
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #28c;
+  color: #fff;
+
+  transition: filter 0.3s ease;
+}
+
+.remove-todo {
+  align-self: flex-start;
+  background-color: #c28;
+  width: 1.75rem;
+  height: 1.75rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: #28c;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  filter: brightness(1.2);
+}
+
+.todos-item {
+  border: 1px solid #999;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
