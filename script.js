@@ -1,13 +1,25 @@
+// TABs
+
 // FORM 2 JSON
 
-const $form2JSON = documen.querySelector("#form2json");
+const $fm2json = document.querySelector("#fm2json");
+const $firstname = $fm2json.querySelector("#firstname");
+const $lastname = $fm2json.querySelector("#lastname");
+const $jsontxtarea = document.querySelector("#jsontxtarea");
 
-$form2JSON.addEventListener("submit", (e) => {
+$fm2json.addEventListener("submit", (e) => {
   e.preventDefault();
-  let firstname = $form2JSON.querySelector("#firstname").value;
-  let lasname = $form2JSON.querySelector("#lastname").value;
+  let firstname = $firstname.value;
+  let lastname = $lastname.value;
+  $jsontxtarea.value = JSON.stringify({ firstname, lastname });
+});
 
-  let $jsontxtarea = document.querySelector("#jsontxtarea");
+const $FillFormBtn = document.querySelector("#fillform");
+$FillFormBtn.addEventListener("click", (e) => {
+  let obj = JSON.parse($jsontxtarea.value);
+
+  $firstname.value = obj.firstname;
+  $lastname.value = obj.lastname;
 });
 
 // TODOS PART

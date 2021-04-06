@@ -17,6 +17,18 @@ nav {
 textarea {
   resize: none;
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+#form2json {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+#form2json form,
+#form2json div {
+  flex: 1;
 }
 
 #add-form {
