@@ -1,5 +1,31 @@
 // TABs
 
+// Absolutely horrible code!
+
+const $jsonSection = document.querySelector("#form2json");
+const $todosSection = document.querySelector("#todos-section");
+
+$todosSection.style.display = "none";
+
+const $jsonTAB = document.querySelector("#json-tab");
+const $todoTAB = document.querySelector("#todo-tab");
+
+$jsonTAB.addEventListener("click", (e) => {
+  $jsonSection.style.display = "initial";
+  $todosSection.style.display = "none";
+
+  $jsonTAB.setAttribute("class", "selected");
+  $todoTAB.setAttribute("class", "");
+});
+
+$todoTAB.addEventListener("click", (e) => {
+  $jsonSection.style.display = "none";
+  $todosSection.style.display = "initial";
+
+  $jsonTAB.setAttribute("class", "");
+  $todoTAB.setAttribute("class", "selected");
+});
+
 // FORM 2 JSON
 
 const $fm2json = document.querySelector("#fm2json");

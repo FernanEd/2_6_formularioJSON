@@ -8,10 +8,15 @@ body {
   padding-top: 2rem;
 }
 
+.selected {
+  color: #c28;
+}
+
 nav {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 textarea {
@@ -20,7 +25,7 @@ textarea {
   margin-bottom: 1rem;
 }
 
-#form2json {
+#form2json > div {
   display: flex;
   align-items: flex-end;
   gap: 1rem;

@@ -9,25 +9,27 @@
   </head>
   <body>
     <nav>
-      <a href="#">Form2JSON</a>
-      <a href="#">TODOs</a>
+      <a href="#" id="json-tab" class="selected">Form2JSON</a>
+      <a href="#" id="todo-tab">TODOs</a>
     </nav>
     <section id="form2json">
-      <form action="" id="fm2json">
-        <div class="form-group">
-          <label>First name</label>
-          <input id="firstname" type="text" />
-          <label>Last name</label>
-          <input id="lastname" type="text" />
-        </div>
-        <button type="submit">Generate JSON</button>
-      </form>
       <div>
-        <textarea name="" id="jsontxtarea" rows="3"></textarea>
-        <button id="fillform">Fill form</button>
+        <form action="" id="fm2json">
+          <div class="form-group">
+            <label>First name</label>
+            <input id="firstname" type="text" />
+            <label>Last name</label>
+            <input id="lastname" type="text" />
+          </div>
+          <button type="submit">Generate JSON</button>
+        </form>
+        <div>
+          <textarea name="" id="jsontxtarea" rows="3"></textarea>
+          <button id="fillform">Fill form</button>
+        </div>
       </div>
     </section>
-    <section id="todos">
+    <section id="todos-section">
       <form id="add-form" action="">
         <div class="form-group">
           <label>To do</label>
